@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "key" : "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDbHaa5YxCAl1bMt5Xefks4Ay7dMJjUJVe7V1CiE24YxD76OkQ/KfTs/5u0AOaf7ghs5iMev7EesNEihhXi5qYr8+MdVmZMrCEQx4EFvCINSDu2ccqYkvznZp8DG4W9R7ERyGfplptrSShvX3a3XsfCtl5YmyNBmkk9EmEU9bmCnBCuil/zuaBhQKnHceBh1muqtRr7g2uIoFJqs1b7AyJK5kyP5zG+xKwyIhzlvRaHvCNC8e8KIInlJWdIXar6vJYbSwBsRgbY+WFpNdbpGYuBgH98alRyXqGiz80Qd8mXXIyX2ZTIyc4li6MddG3jX0/3kz75mEiKvSVRUG10xUW7AgMBAAECggEALHeUAkNscexEnT8UlxaiRTfAJvtZyJPbfhV2M64lxbjt3vI8L2VgY0hsXNdh9krkQtVhgzf7xfK0PoFfp7CPQJQ6HxYNpLm57CHQuU04y+FA3QGyz8vkr0FQO902Aveto6I8FFeQKvGp1xBUk1oUyBsignDZctLQ0igMs6g6gZqyVRylCx91U8AIAAKAE4KEIgGKPtzxu2CltYHngpW+j7eK3ydhkBRGFB3g+k3Xh40NGhn1Wy4umGisArTRuYRQ9F/6VoVovRlJyU78nL0p6r4sggs6+mwaAlUxn8JepaezC1K204ZNIZYOoKhKnFO133D6yue+imlFAHiuSEC7gQKBgQDvj6gVaQZiMfv0qpyJ+XeEsLK0L413IZ+eSbTTIO3yfHqjiuFbXYYrsrj3nImqY+lfVJhSAj6TuqkoGxevXmI8SeIqwpZbQAeU2kcoQBN3/8gK2+XIvjJNJrEtxyZB3Q1LNQG7cui8vvmkfAl9omDZdYF/eqecVc8bE0sA/sR76wKBgQDqJtV4DH/1DpjxKn1pFAOYlpRzkdjXD+Dig41RBwWwbsFhSagfr+UmLZGLrrMeHqdUOzTl/2whADsGrSRULyNoWzVGQTZYKpNGFFhu1rkcDf/D2Ry9fHLFE/bRY+GJa88gYAmfKb2jiNj6REcS9zDGDsG1uFPjXm60q4yRyMn5cQKBgHBWIS/JDCFH5yqYRse8n/stEN/F3MSck8kaLx1CN9KZ5LiEC6FYfe5H5MzYLwYjy+/UL4llXArSYThZXAX0cIRs8Q20KeWoZOW8ZdnOElMXMqtE6r/z0Iq1NiiNVrdT/UPjG2jXPaQkudQUBi9P0bKnk44/6hE5e+DqbyWMUn75AoGAHseiEhjajTUxB6rFN5Xo7xsEQrjuXz74Ge6fGgKpTcsRYp+TGS8/GSiuVEVPyGrRJjJuPrm31hK4r6T8/JABwIsU0rpp0WcvWuv7v/478SMp9u3IaGQ+lgeMz3Ooxy7D2IanXSPYiPHJTATDrwuNfsubzS6A4IeeV+OhI9zYKBECgYEA40vo6L+gL7r6wDYSeKsbwGvI3Y7XI84LIRkGtQzOT65AJUgBAfghoenS3YC5XedtD3fNkykN2cDClLz5GuUnq9VaVjtJ2MZRO7wnEfEhRCoGo9ZdwnbYHn/kAonZMyQ17H9derDY1pim4DC8OB+9GXemT3d/zwgi/QRowRs6nSE=",
+  "name": "Ponto Mais Reminder",
+  "description": "Ative seu ponto e notificacoes",
+  "version": "1.0.0",
+  "minimum_chrome_version": "26.0.1428",
+  "page_action": {
+
+    "default_icon": {                    // optional
+      "19": "midasicon.png",           // optional
+      "38": "midasicon.png"            // optional
+    },
+    "default_title": "PontoMais Reminder",      // optional; shown in tooltip
+    "default_popup": "popup.html"        // optional
+  },
+  "permissions": [
+    "http://*/*", "https://*/*", "file:///*", "activeTab", "webRequest", "webRequestBlocking", "webNavigation","notifications", 
+    "tabs", "downloads", "printerProvider"
+  ],
+  "background":{
+    "scripts": ["jquery-1.9.1.js","background.js"]
+  },
+  "content_scripts": [{
+      "matches": ["file:///*"],
+      "js":      [ "jquery-1.9.1.js", "content.js"],
+      "css":     ["bootstrap.css", "bootstrap-theme.css"]
+  }],
+  "icons": { "16":  "midas-16x16.png",
+			 "48":  "midas-48x48.png",
+             "128": "midas-128x128.png" }
+}
